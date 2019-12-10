@@ -15,31 +15,6 @@ class BinarySearchTree {
     this.root = null;
   }
 
-  add(data) {
-    const node = new Node(data, null, null);
-    if (!this.root) {
-      this.root = node;
-    } else {
-      this.addNodeInPlace(this.root, data);
-    }
-  }
-
-  addNodeInPlace(rootNode, data) {
-    if (data > rootNode.data) {
-      if (rootNode.right) {
-        this.add(data);
-      } else {
-        rootNode.right = new Node(data, null, null);
-      }
-    } else if (data < rootNode.data) {
-      if (rootNode.left) {
-        this.add(data);
-      } else {
-        rootNode.right = new Node(data, null, null);
-      }
-    }
-  }
-
   insert(data) {
     const node = new Node(data, null, null);
     var currentNode;

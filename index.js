@@ -38,4 +38,3 @@ const arr = [2, 1, 3, 0, 7, 9, 1];
 t2.root = t2.insertLevelOrder(arr, t2.root, 0);
 t2.inOrder(t2.root);
 t2.levelWidth(t2.root);
-t2.ifNodeExists(t2, 1);
