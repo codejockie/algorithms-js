@@ -3,6 +3,7 @@ const bubbleSort = require('./Sorting/BubbleSort');
 const { frequencyDigits } = require('./DigitOccurrence');
 const insertionSort = require('./Sorting/InsertionSort');
 const selectionSort = require('./Sorting/SelectionSort');
+const quickSort = require('./Sorting/QuickSort');
 const { BinaryTree } = require('./DataStructures/Trees/BinaryTree');
 const { BinarySearchTree } = require('./DataStructures/Trees/BinarySearchTree');
 
@@ -17,7 +18,11 @@ const insertionSorted = insertionSort(array);
 // console.log('selectivelySorted:', selectivelySorted);
 // console.log('insertionSorted:', insertionSorted);
 
-console.log(frequencyDigits(35, 2));
+// console.log(frequencyDigits(35, 2));
+const array2 = [8, 7, 2, 1, 0, 9, 6];
+console.log(array2);
+quickSort(array2, 0, array2.length - 1);
+console.log(array2);
 
 // const bt = new BinarySearchTree();
 // bt.insert(2);
@@ -43,3 +48,15 @@ console.log(frequencyDigits(35, 2));
 // t2.levelWidth(t2.root);
 
 // https://www.sitepoint.com/javascript-command-line-interface-cli-node-js
+function debounce(func, wait, immediate) {
+  var timeout;
+  return function() {
+    var context = this, args = arguments;
+    clearTimeout(timeout);
+    timeout = setTimeout(function() {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    }, wait);
+    if (immediate && !timeout) func.apply(context, args);
+  };
+}
